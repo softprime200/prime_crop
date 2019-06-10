@@ -643,7 +643,7 @@ public class VideoCropActivity extends AppCompatActivity implements VideoPlayer.
 
         mFFMpeg = FFmpeg.getInstance(this);
         if (mFFMpeg.isSupported()) {
-            String crop = String.format("crop=%d:%d:%d:%d:exact=0", cropRect.right, cropRect.bottom, cropRect.left, cropRect.top);
+            String crop = String.format("crop=%d:%d:%d:%d:exact=0,scale=1080:540", cropRect.right, cropRect.bottom, cropRect.left, cropRect.top);
             String[] cmd = {
                     "-y",
                     "-ss",
